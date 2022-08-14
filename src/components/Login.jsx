@@ -135,12 +135,10 @@ const Hero = styled.div`
   }
 
   img {
-    /* z-index: -1; */
-    width: 700px;
-    height: 670px;
+    width: 600px;
     position: absolute;
-    bottom: -2px;
-    right: -150px;
+    bottom: 40px;
+    right: 50px;
     @media (max-width: 768px) {
       top: 230px;
       width: initial;
