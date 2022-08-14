@@ -11,8 +11,8 @@ export function signInApi() {
   return (dispatch) => {
     signInWithPopup(auth, provider)
       .then((payload) => {
-        // console.log(payload.user);
-        dispatch(setUser(payload.user));
+        console.log(payload.user);
+        // dispatch(setUser(payload.user));
       })
       .catch((error) => alert(error.message));
   };

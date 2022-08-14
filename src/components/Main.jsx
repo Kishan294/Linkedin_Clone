@@ -300,11 +300,26 @@ const SocialCounts = styled.ul`
   padding: 8px 0;
   border-bottom: 1px solid #e9e5df;
   list-style: none;
+  justify-content: space-between;
+
   li {
     margin-right: 5px;
     font-size: 12px;
+
+    a {
+      color: rgba(0, 0, 0, 0.6);
+      font-size: 14px;
+    }
     button {
       display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      outline: none;
+      border: none;
+      span {
+        color: rgba(0, 0, 0, 0.6);
+      }
     }
   }
 `;
@@ -312,15 +327,44 @@ const SocialCounts = styled.ul`
 const SocialActions = styled.div`
   align-items: center;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-around;
   margin: 0;
   min-height: 40px;
   padding: 4px 8px;
+
+  img {
+    margin-right: 5px;
+  }
+
   button {
     display: inline-flex;
     align-items: center;
     padding: 8px;
     color: #0a66c2;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.15);
+      border-radius: 5px;
+    }
+
+    img,
+    svg {
+      color: rgba(0, 0, 0, 0.6);
+      pointer-events: none;
+    }
+
+    span {
+      color: rgba(0, 0, 0, 0.6);
+      font-size: 14px;
+      font-weight: 600;
+
+      &:hover {
+        color: rgba(0, 0, 0, 1);
+      }
+    }
 
     @media (min-width: 768px) {
       span {
