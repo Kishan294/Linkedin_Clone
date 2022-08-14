@@ -141,6 +141,7 @@ const Header = styled.div`
     color: rgba(0, 0, 0, 0.15);
     border: none;
     background: transparent;
+    cursor: pointer;
     svg,
     img {
       pointer-events: none;

@@ -19,6 +19,7 @@ const Main = (props) => {
         break;
       default:
         setShowModal("close");
+        break;
     }
   };
   return (

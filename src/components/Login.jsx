@@ -2,8 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import { signInApi } from "../actions";
-import { signInWithRedirect } from "firebase/auth";
-import { Navigate } from "react-router";
+import { Navigate } from "react-router-dom";
 
 const Login = (props) => {
   return (
@@ -54,6 +53,7 @@ const Nav = styled.nav`
 
     @media (max-width: 768px) {
       padding: 0 5px;
+      width: 110px;
     }
   }
 `;
@@ -69,6 +69,9 @@ const Join = styled.a`
     background-color: rgba(0, 0, 0, 0.08);
     color: rgba(0, 0, 0, 0.9);
     text-decoration: none;
+  }
+  @media (max-width: 768px) {
+    padding: 7px;
   }
 `;
 
@@ -87,6 +90,10 @@ const Signin = styled.a`
     background-color: rgba(112, 181, 249, 0.15);
     color: #0a66c2;
     text-decoration: none;
+  }
+
+  @media (max-width: 768px) {
+    padding: 8px 20px;
   }
 `;
 
@@ -116,7 +123,7 @@ const Hero = styled.div`
     width: 55%;
     font-size: 56px;
     color: #2977c9;
-    font-weight: 200;
+    font-weight: 400;
     line-height: 70px;
 
     @media (max-width: 768px) {
@@ -168,6 +175,10 @@ const Google = styled.button`
   transition-duration: 167ms;
   font-size: 20px;
   color: rgba(0, 0, 0, 0.6);
+
+  img {
+    margin-right: 4px;
+  }
 
   &:hover {
     background-color: rgba(207, 207, 207, 0.25);
