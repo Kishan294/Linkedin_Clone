@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useState } from "react";
+import { connect } from "react-redux";
 
 const PostModal = (props) => {
   const [editorText, setEditorText] = useState("");
@@ -36,8 +37,13 @@ const PostModal = (props) => {
             </Header>
             <SharedContent>
               <UserInfo>
-                <img src="/images/user.svg" alt="" />
-                <span>Name</span>
+                {props.user.photoURL ? (
+                  <img src={props.user.photoURL} alt="" />
+                ) : (
+                  <img src="/images/user.svg" alt="" />
+                )}
+
+                <span>{props.user.displayName}</span>
               </UserInfo>
               <Editor>
                 <textarea
@@ -58,7 +64,12 @@ const PostModal = (props) => {
                   <p>
                     <label htmlFor="file">Select an image to share</label>
                   </p>
-                  {shareImage && <img src={URL.createObjectURL(shareImage)} />}
+                  {shareImage && (
+                    <img
+                      src={URL.createObjectURL(shareImage)}
+                      alt="Share post"
+                    />
+                  )}
                 </UploadImage>
               </Editor>
             </SharedContent>
@@ -253,5 +264,18 @@ const Editor = styled.div`
   }
 `;
 
-const UploadImage = styled.div``;
-export default PostModal;
+const UploadImage = styled.div`
+  text-align: center;
+  img {
+    width: 100%;
+  }
+`;
+
+const mapStatToProps = (state) => {
+  return {
+    user: state.userState.user,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => ({});
+export default connect(mapStatToProps, mapDispatchToProps)(PostModal);

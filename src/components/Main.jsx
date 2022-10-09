@@ -4,6 +4,7 @@ import PostModal from "./PostModal";
 
 const Main = (props) => {
   const [showModal, setShowModal] = useState("close");
+
   const handleClick = (e) => {
     e.preventDefault();
     if (e.target !== e.currentTarget) {
@@ -22,6 +23,7 @@ const Main = (props) => {
         break;
     }
   };
+
   return (
     <Container>
       <ShareBox>
@@ -56,7 +58,7 @@ const Main = (props) => {
       <div>
         <Articles>
           <SharedActor>
-            <a>
+            <a href="/">
               <img src="/images/user.svg" alt="" />
               <div>
                 <span>Title</span>
@@ -70,7 +72,7 @@ const Main = (props) => {
           </SharedActor>
           <Description>Description</Description>
           <SharedImg>
-            <a>
+            <a href="/">
               <img
                 src="https://images.unsplash.com/photo-1656706593663-837f683cfc35?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
                 alt=""
@@ -96,7 +98,7 @@ const Main = (props) => {
               </button>
             </li>
             <li>
-              <a>2 comments</a>
+              <a href="/">2 comments</a>
             </li>
           </SocialCounts>
           <SocialActions>
@@ -119,7 +121,7 @@ const Main = (props) => {
           </SocialActions>
         </Articles>
       </div>
-      <PostModal showModal={showModal} handleCick={handleClick} />
+      <PostModal showModal={showModal} handleClick={handleClick} />
     </Container>
   );
 };

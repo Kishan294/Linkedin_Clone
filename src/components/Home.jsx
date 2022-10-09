@@ -32,11 +32,12 @@ const Container = styled.div`
   padding-top: 52px;
   max-width: 100%;
 `;
-const Content = styled.div`
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-`;
+
+// const Content = styled.div`
+//   max-width: 100%;
+//   margin-left: auto;
+//   margin-right: auto;
+// `;
 
 const Section = styled.section`
   min-height: 50px;

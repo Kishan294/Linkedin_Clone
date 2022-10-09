@@ -1,6 +1,7 @@
 import { auth, provider } from "../firebase.config";
 import { signInWithPopup } from "firebase/auth";
 import { SET_USER } from "./actionType";
+import { getAuth, signOut } from "firebase/auth";
 
 export const setUser = (payload) => ({
   type: SET_USER,
@@ -29,9 +30,9 @@ export function getUserAuth() {
 }
 
 export function signOutApi() {
+  const auth = getAuth();
   return (dispatch) => {
-    auth
-      .signOut()
+    signOut(auth)
       .then(() => {
         dispatch(setUser(null));
       })
