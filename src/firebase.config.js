@@ -5,12 +5,12 @@ import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import { getDatabase } from "firebase/database";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBXzOZNRlMjzig8gdeLQrN51cdP8g1K9tk",
-  authDomain: "linkedin-clone-fcbab.firebaseapp.com",
-  projectId: "linkedin-clone-fcbab",
-  storageBucket: "linkedin-clone-fcbab.appspot.com",
-  messagingSenderId: "255290296991",
-  appId: "1:255290296991:web:d5f6b8c2d05384df1e70aa",
+  apiKey: process.env.REACT_APP_FIREBASE_APIKEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
 };
 
 const firebaseApp = getApps.length > 0 ? getApp : initializeApp(firebaseConfig);
